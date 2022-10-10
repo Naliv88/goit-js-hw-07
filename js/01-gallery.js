@@ -42,16 +42,25 @@ function imgClick(event) {
   event.preventDefault();
   if (event.target.nodeName !== "IMG") return;
  
-    const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="1280" height="1040">`);
-    instance.show();
-    
-    document.addEventListener("keydown", onEscCloseModal);
+    const modal = basicLightbox.create(`<img src="${event.target.dataset.source}" width="1280" height="1040">`, {
+        onShow: () => {
+            document.addEventListener("keydown", onEscCloseModal);
+            console.log("open modal");
+        },
+
+        onClose: () => { 
+            document.removeEventListener("keydown", onEscCloseModal);
+            refs.gallery.removeEventListener("click", imgClick);
+            console.log("close modal");
+        },
+    });
+
+    modal.show();
 
     function onEscCloseModal(event) {
         if (event.code === "Escape") {
-            instance.close();
-            document.removeEventListener("keydown", onEscCloseModal);
-        }
+            modal.close();
+        };
     };
 };
 
