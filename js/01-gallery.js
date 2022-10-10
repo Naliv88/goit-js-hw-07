@@ -50,7 +50,6 @@ function imgClick(event) {
 
         onClose: () => { 
             document.removeEventListener("keydown", onEscCloseModal);
-            refs.gallery.removeEventListener("click", imgClick);
             console.log("close modal");
         },
     });
