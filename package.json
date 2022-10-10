@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "basiclightbox": "^5.0.4"
+  },
+  "name": "goit-js-hw-07",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naliv88/goit-js-hw-07.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naliv88/goit-js-hw-07/issues"
+  },
+  "homepage": "https://github.com/Naliv88/goit-js-hw-07#readme"
+}
